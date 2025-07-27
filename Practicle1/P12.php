@@ -6,7 +6,7 @@
 <?php
 echo "Hello! How are You?<br>";
 echo "Good Morning";
-
+echo "Today is best for you";
 ?>
 
 <?php
