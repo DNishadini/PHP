@@ -74,7 +74,7 @@
             echo $var8 . "<br>";
 
             $txt .= "bb";
-            echo $txt;
+            echo $txt
 
 
 
