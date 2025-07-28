@@ -4,7 +4,7 @@
     </head>
     <body>
        <?php
-        $txt = PHP;
+        $txt = "PHP";
         echo " $txt! is a server side scripting language";
         ?>
  
