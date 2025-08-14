@@ -40,8 +40,18 @@
                 echo "<p><strong>Date of Birth:</strong> $dob</p>";
                 echo "<p><strong>Gender:</strong> $gender</p>";
                 echo "</div><hr>";
+
+
+                $dobDate = new DateTime($dob);
+                $today = new DateTime();
+                $age =$today->diff($dobDate)->y;
                 
-    	
+    	if ($age < 45) {
+            echo "<strong>You are eligible to register.</strong>";
+        } else {
+            echo "<strong>Sorry, you must be under 45 years old to register.</strong>";
+        }
+    
 	}
         ?>
         <div class="border">
