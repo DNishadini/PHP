@@ -10,4 +10,11 @@
 
     myfun();
     echo "Out of the function $y";
+
+/*= $x + $y;
+
+Adds $x (5) to $y (10) → $y becomes 15.
+
+This change affects the global $y because of the global keyword.*/
+
 ?>
