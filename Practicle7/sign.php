@@ -15,7 +15,8 @@
         $sql1->bind_param("ssss",$uid,$uname,$pass,$Role);
 
         if($sql1->execute()){
-            echo "Data insert Table 1 Ssuccessfully";
+            echo "Data insert Table 1 Successfully";
+            header("Location:login.html");
         }else{
             echo "Error inserting data: ".$conn->error;
         }
