@@ -12,7 +12,7 @@
         <head></head>
         <body>
             <h2>You Login As <?php echo $_SESSION['Role']; ?></h2>   
-            <form method="post">
+            <form action="logout.php" method="post">
         <input type="submit" name="logout" value="Logout">
     </form>
 
