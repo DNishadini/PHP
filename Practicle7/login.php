@@ -17,7 +17,7 @@
             $_SESSION['Role']=$row['Role'];
 
              if($row['Role'] == 'admin'){
-                header("Location: admin.php");
+                header("Location: admin.html");
              }elseif($row['Role'] == 'buyer'){
                 header("Location: user.php");
 
