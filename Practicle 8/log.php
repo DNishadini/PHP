@@ -5,28 +5,31 @@
     include "conn.php";
     $conn->select_db("emarketing");
 
-    if(isset($_POST['log'])){
+    if(isset($_POST['login'])){
         $username = $_POST['name'];
         $password = $_POST['pwd'];
 
-        $sql = $conn->prepare("SELECT * FROM user WHERE username=? AND password=?");
-        $sql->bind_param("ss",$username,$password);
+        $sql = $conn->prepare("SELECT * FROM user WHERE username=?");
+        $sql->bind_param("s",$username);
         $sql->execute();
         $result = $sql->get_result();
 
 
         if($row = $result->fetch_assoc()){
-            $_SESSION['username']=$row['username'];
-            $_SESSION['role']=$row['role'];
+            if(password_verify($password,$row['password'])){
+                $_SESSION['username']=$row['username'];
+                $_SESSION['role']=$row['role'];
+                $_SESSION['userid']=$row['userid'];
+                
+                if($row['role'] === 'seller'){
+                    header("Location: additem.php");
+                }elseif($row['role'] === 'buyer'){
+                    header("Location: viewitem.html");
 
-             if($row['role'] == 'seller'){
-                header("Location: additem.html");
-             }elseif($row['role'] == 'buyer'){
-                header("Location: viewitem.html");
-
-             }else{
-                header("Location: log.html");
-             }
+                }else{
+                    header("Location: log.html");
+                }
+            }
         }else{
             echo "Invalid username or password";
             header("Location: log.html");
