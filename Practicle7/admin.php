@@ -19,7 +19,7 @@
             echo "Error inserting data: " . $conn->error;
         }
 
-       // $conn->close();
+        $conn->close();
     }
 ?>
 
