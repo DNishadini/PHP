@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+        if (typeof jQuery == "undefined") {
+            alert('Wrong');
+        } else {
+            //alert('Correct');
+        }
+    </script>
+</head>
+
+<body>
+    <script>
+        $(document).ready(function () {
+            document.getElementById("msg").innerHTML = "Hellow World!";
+
+            document.getElementById("myDiv1").innerHTML = "Hellow from jQuery";
+
+            document.getElementById("myDiv2").innerHTML = "<b>BCS Level II</b>";
+
+            let item4 = document.createElement("li");
+            item4.innerHTML = "Item 4";
+            document.getElementById("mylist").appendChild(item4);
+
+            $("#msg").css("background-color", "yellow");
+
+            $("#myDiv1").css({
+                "background-color": "red",
+                "color": "white"
+            });
+
+            let check = document.createElement("p");
+            check.innerHTML = "This is a new paragraph created by jQuery";
+            document.body.appendChild(check);
+
+            $("#btn").click(function(){
+                alert("Button clicked!");
+                $(this).hide();
+            });
+
+            $("#btn").css({
+                "background-color": "blue",
+                "border": "none",
+                "padding": "10px 20px",
+                "cursor": "pointer"
+            });
+
+            $("#mouse").mouseenter(function(){
+                $(this).css({
+                    "background-color": "lightblue",
+                    "color": "black"
+                });
+            });
+
+            $("#mouse").mouseleave(function(){
+                $(this).css({
+                    "background-color": "white"
+                });
+            });
+
+            $("#level1").mouseenter(function(){
+                $("#level1-unite").show();
+            }).mouseleave(function(){
+                $("#level1-unite").hide();
+            });
+
+            $("#level2").mouseenter(function(){
+                $("#level2-unite").slideDown();
+            }).mouseleave(function(){
+                $("#level2-unite").slideUp();
+            });
+
+            $("#myimg").mouseenter(function(){
+                $(this).css({
+                    width: "700px",
+                    height: "400px"
+                });
+            }).mouseleave(function(){
+                $(this).css({
+                    width: "100px",
+                    height: "100px"
+                });
+            });
+        });
+    </script>
+
+    <h1>Example 1</h1>
+
+    <p id="msg"></p>
+
+    <div id="myDiv1">Hello</div>
+
+    <div id="myDiv2">Csc2233</div>
+
+    <div>
+        <ul id="mylist">
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+    </div>
+
+    <button id="btn">Click Me</button>
+
+    <p id="mouse">This page demonstrates jQuery functionality.</p>
+
+    <h1 id="level1">Level One</h1>
+    <ul id="level1-unite">
+        <li>CSC1132</li>
+        <li>CSC2233</li>
+        <li>CSC3334</li>
+    </ul>
+
+    <h1 id="level2">Level Two</h1>
+    <ul id="level2-unite">
+        <li>CSC4435</li>
+        <li>CSC5536</li>
+        <li>CSC6637</li>
+    </ul>
+
+    <img id="myimg" src="img.jpg" alt="Image" style="width: 100px; height: 100px;">
+</body>
+
+</html>
