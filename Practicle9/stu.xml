@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE stu SYSTEM "student.dtd">
+<student>
+    <firstName>Luca</firstName>
+    <lastName>Rossi</lastName>
+    <id>281283</id>
+    <plan>
+        <courses year="3">
+            <course>
+                <name>Internet Programming</name>
+                <shortName>COM3113</shortName>
+                <record>
+                    <marks>30</marks>
+                    <grade>D</grade>
+                </record>
+            </course>
+            <course>
+                <name>Programming Techniques</name>
+                <shortName>COM3231</shortName>
+            </course>
+        </courses>
+    </plan>
+</student>
