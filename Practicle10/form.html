@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script>
+            if(typeof jQuery == "undefined"){
+                alert('wrong');
+            }else{
+                alert('ok')
+            }
+            
+        </script>
+        <style>
+            .dinu{
+                    background-color : green;
+                    border-color : red;
+
+                }    
+        </style>
+    </head>
+    <body>
+        
+        <h2>Feedback Form</h2>
+    <form id="myForm">
+        <input type="text" id="name" placeholder="Name" /><br><br>
+        <input type="email" id="email" placeholder="Email" /><br><br>
+        <input type="text" id="feedback" placeholder="Feedback" /><br><br>
+        <button type="submit">Submit</button>
+    </form>
+    <script>
+            $("#myForm").submit(function(e){
+                e.preventDefault();
+                let isValid=true;
+                $("input").removeClass("dinu");
+
+                $("#myForm input").each(function(){
+                    if($(this).val().trim()==""){
+                        $(this).addClass("dinu");
+                        isValid=false;
+                    }
+                });
+                if(isValid){
+                    alert('Form submitted successfully');
+                }
+            });
+        </script>
+    </body>
+</html>
