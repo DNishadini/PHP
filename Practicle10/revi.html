@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script src=""https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js""></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script>
-            if(typeof jQuery == "undifined"){
+            if(typeof jQuery == "undefined"){
                 alert("Wrong");
             }else{
                 alert("ok");
@@ -11,10 +11,88 @@
         </script>
     </head>
     <body>
+        <script>
+            $(document).ready(function(){
+                document.getElementById("msg").innerHTML = "Hellow World!";
+                document.getElementById("myDiv1").innerHTML="Departmen of CS";
+                document.getElementById("myDiv2").innerHTML="<B>BCS Level II</B>";
+
+                let item4=document.createElement("li");
+                item4.innerHTML="Item4";
+                document.getElementById("mylist").appendChild(item4);
+
+                $("#msg").css("background-color","yellow");
+
+                $("#myDiv1").css({
+                    "background-color":"blue",
+                    "color":"#fff"
+                });
+
+                $("#btn").click(function(){
+                    alert('Clicked');
+                    $(this).hide();
+                })
+
+                $("#btn").css({
+                    "background-color": "blue",
+                    "border": "none",
+                    "padding": "10px 20px",
+                    "cursor": "pointer"
+                })
+
+                $("#msg").mouseenter(function(){
+                    $(this).css({
+                        "background-color": "lightblue",
+                        "color": "black"
+                    }).mouseleave(function(){
+                        $(this).css({
+                    "background-color": "white"
+                
+                    });
+                });
+                });
+
+                $("#level1").mouseenter(function(){
+                    $("#level1-unite").show();
+                    }).mouseleave(function(){
+                        $("#level1-unite").hide();
+                });
+
+                $("#level2").mouseenter(function(){
+                $("#level2-unite").slideDown();
+            }).mouseleave(function(){
+                $("#level2-unite").slideUp();
+            });
+                
+            })
+        </script>
         <h1>Example 1</h1>
         <p id="msg"></p>
         <div id="myDiv1">Hello</div>
-        <div id="myDiv2">Csc2233</div> 
+        <div id="myDiv2">Csc2233</div>
+        <div>
+            <ul id="mylist">
+                <li>Item1</li>
+                <li>Item2</li>
+                <li>Item3</li>
+
+            </ul>
+        </div>
+        <button id="btn">Click the button</button> 
+        <h1 id="level1">Level One</h1>
+            <ul id="level1-unite">
+                <li>CSC1132</li>
+                <li>CSC2233</li>
+                <li>CSC3334</li>
+             </ul>
+
+        <h1 id="level2">Level Two</h1>
+            <ul id="level2-unite">
+                <li>CSC4435</li>
+                <li>CSC5536</li>
+                <li>CSC6637</li>
+            </ul>
+
 
 
     </body>
